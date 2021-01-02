@@ -24,7 +24,7 @@ for r in range(2):
 	roidb = []
 	with open(file_path_use,'r') as f:
 		data=json.load(f)
-		image_name = data.keys()
+		image_name = list(data.keys())
 		len_img = len(image_name)
 		t = 0
 		for image_id in range(len_img):
