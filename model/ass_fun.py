@@ -50,7 +50,7 @@ def generate_batch_bal(labels, N_each):
 
 def read_roidb(roidb_path):
 	roidb_file = np.load(roidb_path)
-	key = roidb_file.keys()[0]
+	key = list(roidb_file.keys())[0]
 	roidb_temp = roidb_file[key]
 	roidb = roidb_temp[()]
 	return roidb
