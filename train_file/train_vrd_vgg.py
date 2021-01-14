@@ -50,7 +50,10 @@ optimizer = tf.train.AdamOptimizer(learning_rate=lr_init)
 train_loss = vnet.losses['rd_loss']
 RD_train = optimizer.minimize(train_loss, var_list = RD_var)
 
-with tf.Session() as sess:
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
+
+with tf.Session(config=config) as sess:
 	init = tf.global_variables_initializer()
 	sess.run(init)
 	saver_res.restore(sess, res_path)
