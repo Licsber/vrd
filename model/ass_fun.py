@@ -49,7 +49,7 @@ def generate_batch_bal(labels, N_each):
 	return index_box
 
 def read_roidb(roidb_path):
-	roidb_file = np.load(roidb_path, allow_pickle=True)
+	roidb_file = np.load(roidb_path, allow_pickle=True, encoding='latin1')
 	key = list(roidb_file.keys())[0]
 	roidb_temp = roidb_file[key]
 	roidb = roidb_temp[()]
